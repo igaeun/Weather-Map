@@ -86,7 +86,9 @@ function App() {
         {Object.keys(result).length !== 0 && (
            <WeatherWrap>
            <div className='cityName'>{result.data.name}</div>
-           <div className='temp'>{result.data.main.temp}</div>
+           <div className='temp'>
+            {Math.round(((result.data.main.temp - 273.15) * 10)) / 10}°C
+           </div>
            <div className='sky'>{result.data.weather[0].main}</div>
          </WeatherWrap>
         )}
